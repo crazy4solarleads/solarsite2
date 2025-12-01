@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Savings Estimate | Sundial Solar Systems</title>
+  <meta
+    name="description"
+    content="Get a free custom solar savings estimate. See how much you can save compared to your current electric bill, then request a personalized proposal."
+  />
+  <style>
+    :root {
+      --primary: #18a34a;
+      --primary-dark: #15803d;
+      --accent: #0ea5e9;
+      --bg: #0f172a;
+      --card-bg: #111827;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2933;
+      --danger: #dc2626;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+
+    body {
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+
+    .logo-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+
+    .branding-text h1 {
+      font-size: 1.2rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+
+    .branding-text p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+
+    .header-badge {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+    }
+
+
+    .header-badge span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    }
+
+
+    /* Layout */
+
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+
+    /* Hero content */
+
+
+    .hero {
+      padding: 1.25rem 1.5rem;
+      border-radius: 1.25rem;
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+    }
+
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.6rem;
+    }
+
+
+    .hero h2 {
+      font-size: 1.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+
+    .hero h2 span {
+      color: var(--primary);
+    }
+
+
+    .hero-sub {
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+      font-size: 0.96rem;
+    }
+
+
+    .hero-list {
+      list-style: none;
+      margin-bottom: 1.2rem;
+    }
+
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+      padding: 0.25rem 0;
+      color: #e5e7eb;
+    }
+
+
+    .hero-list li span {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-top: 0.05rem;
+    }
+
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-left: 2px solid rgba(148, 163, 184, 0.6);
+      padding-left: 0.6rem;
+    }
+
+
+    .hero-footer {
+      margin-top: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      color: #022c22;
+      box-shadow: 0 14px 30px rgba(16, 185, 129, 0.5);
+      text-decoration: none;
+    }
+
+
+    .hero-cta small {
+      font-size: 0.7rem;
+      opacity: 0.9;
+    }
+
+
+    .hero-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+
+    /* Card (calculator + form) */
+
+
+    .card {
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      border-radius: 1.25rem;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+
+    .card p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+
+    .pill {
+      font-size: 0.72rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.25rem 0.6rem;
+      color: var(--text-muted);
+    }
+
+
+    .pill strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+
+    .field-group {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+
+    @media (max-width: 600px) {
+      .field-group {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      margin-bottom: 0.25rem;
+      color: #e5e7eb;
+    }
+
+
+    .field-hint {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border-radius: 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.85);
+      padding: 0.5rem 0.6rem;
+      color: var(--text-main);
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #6b7280;
+    }
+
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5);
+      background: #020617;
+    }
+
+
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+
+    .btn-primary {
+      width: 100%;
+      margin-top: 0.3rem;
+      padding: 0.65rem 0.9rem;
+      border-radius: 0.9rem;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ecfdf5;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(16, 185, 129, 0.5);
+    }
+
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+    }
+
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 10px 18px rgba(16, 185, 129, 0.65);
+    }
+
+
+    .results {
+      margin-top: 0.8rem;
+      padding: 0.7rem 0.8rem;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      font-size: 0.8rem;
+    }
+
+
+    .results h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: #e0f2fe;
+    }
+
+
+    .results-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      margin-bottom: 0.18rem;
+    }
+
+
+    .results-row strong {
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+
+    .results-note {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+
+    .results-highlight {
+      color: #bbf7d0;
+      font-weight: 600;
+    }
+
+
+    .error {
+      color: var(--danger);
+      font-size: 0.76rem;
+      margin-top: 0.2rem;
+    }
+
+
+    /* FAQ */
+
+
+    .faq {
+      margin-top: 2.4rem;
+      padding: 1.5rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: radial-gradient(circle at top right, #1f2937, #020617);
+    }
+
+
+    .faq h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+    }
+
+
+    .faq-item + .faq-item {
+      margin-top: 0.7rem;
+    }
+
+
+    .faq-question {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+
+    .faq-answer {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+
+    footer {
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 1.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="branding">
+        <div class="logo-circle">☀️</div>
+        <div class="branding-text">
+          <h1>Sundial Solar Systems</h1>
+          <p>Solar • Roof • Battery Backup</p>
+        </div>
+      </div>
+      <div class="header-badge">
+        <span></span>
+        <div>Free custom estimate • No obligation</div>
+      </div>
+    </header>
+
+
+    <main class="grid">
+      <!-- LEFT: HERO / EXPLANATION -->
+      <section class="hero">
+        <div class="hero-kicker">Instant Solar Savings Snapshot</div>
+        <h2>
+          See what <span>switching to solar</span> could save you each month.
+        </h2>
+        <p class="hero-sub">
+          Enter your current electric bill, compare a typical solar rate, and
+          then request a detailed custom proposal for your home.
+        </p>
+
+
+        <ul class="hero-list">
+          <li>
+            <span>✔</span>
+            <div>
+              <strong>$0 out-of-pocket options</strong> for qualified
+              homeowners.
+            </div>
+          </li>
+          <li>
+            <span>✔</span>
+            <div>
+              One simple monthly payment for power – no surprise utility rate
+              hikes.
+            </div>
+          </li>
+          <li>
+            <span>✔</span>
+            <div>
+              Professional design, permits, installation, and monitoring
+              included.
+            </div>
+          </li>
+        </ul>
+
+
+        <p class="hero-note">
+          This calculator gives a rough ballpark based on simple assumptions.
+          Actual savings depend on your roof, usage, utility rates, and
+          qualifying program in your area.
+        </p>
+
+
+        <div class="hero-footer">
+          <button
+            class="hero-cta"
+            type="button"
+            onclick="document.getElementById('lead-name').scrollIntoView({behavior: 'smooth'})"
+          >
+            Get a free detailed estimate
+          </button>
+          <div class="hero-meta">
+            No spam. No pressure. Just straight numbers for your home.
+          </div>
+        </div>
+      </section>
+
+
+      <!-- RIGHT: CALCULATOR + CONTACT FORM -->
+      <section class="card">
+        <h3>Solar Savings Calculator</h3>
+        <p>
+          Start with your average monthly electric bill. Adjust the rates if you
+          know them, then run the estimate.
+        </p>
+
+
+        <div class="pill-row">
+          <div class="pill">
+            Typical utility rate: <strong>~$0.20–$0.30 / kWh</strong>
+          </div>
+          <div class="pill">
+            Example solar rate: <strong>~$0.15–$0.20 / kWh</strong>
+          </div>
+        </div>
+
+
+        <!-- CALCULATOR -->
+        <form id="calculator-form" onsubmit="event.preventDefault(); calculateSavings();">
+          <div class="field-group">
+            <div>
+              <label for="bill">Average monthly bill ($)</label>
+              <input
+                id="bill"
+                type="number"
+                min="0"
+                step="1"
+                placeholder="e.g. 180"
+                required
+              />
+              <div class="field-hint">
+                Use the average of your last 3–6 electric bills.
+              </div>
+            </div>
+            <div>
+              <label for="usage">Monthly usage (kWh)</label>
+              <input
+                id="usage"
+                type="number"
+                min="0"
+                step="10"
+                placeholder="optional"
+              />
+              <div class="field-hint">
+                Leave blank if you’re not sure – we’ll estimate from your bill.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="field-group">
+            <div>
+              <label for="utility-rate">Current utility rate ($/kWh)</label>
+              <input
+                id="utility-rate"
+                type="number"
+                min="0.01"
+                max="1"
+                step="0.01"
+                value="0.24"
+              />
+              <div class="field-hint">
+                Example: 0.24 = 24¢ per kWh.<br />
+                (Your total bill ÷ total kWh usage for the month)
+              </div>
+            </div>
+            <div>
+              <label for="solar-rate">Estimated solar rate ($/kWh)</label>
+              <input
+                id="solar-rate"
+                type="number"
+                min="0.01"
+                max="1"
+                step="0.01"
+                value="0.17"
+              />
+              <div class="field-hint">Example: 0.17 = 17¢ per kWh</div>
+            </div>
+          </div>
+
+
+          <button class="btn-primary" type="submit">
+            🔍 Calculate your estimated savings
+          </button>
+
+
+          <div id="calc-error" class="error" style="display:none;"></div>
+
+
+          <div id="results" class="results" style="display:none;">
+            <h4>Your estimated solar snapshot</h4>
+            <div class="results-row">
+              <span>Estimated monthly usage</span>
+              <strong id="res-usage">–</strong>
+            </div>
+            <div class="results-row">
+              <span>Estimated solar payment (month 1)</span>
+              <strong id="res-solar-bill">–</strong>
+            </div>
+            <div class="results-row">
+              <span>Estimated first-year savings</span>
+              <strong id="res-year-savings">–</strong>
+            </div>
+            <div class="results-row">
+              <span>Simple 25-year savings estimate*</span>
+              <strong id="res-lifetime-savings">–</strong>
+            </div>
+            <p class="results-note">
+              *Rough estimate using today’s rates, not a formal offer. A custom
+              design for your roof and local incentives can improve accuracy.
+            </p>
+          </div>
+        </form>
+
+
+        <hr style="border:none;border-top:1px solid rgba(148,163,184,0.4);margin:1rem 0;" />
+
+
+        <!-- CONTACT FORM -->
+        <h3 style="margin-bottom:0.3rem;">Request a custom proposal</h3>
+        <p>
+          Share a few details and I’ll put together a tailored solar estimate
+          for your home.
+        </p>
+
+
+        <form
+          id="lead-form"
+          method="POST"
+          action="https://formspree.io/f/mkgdbnva"
+        >
+          <div class="field-group">
+            <div>
+              <label for="lead-name">Full name</label>
+              <input
+                id="lead-name"
+                name="name"
+                type="text"
+                placeholder="John Smith"
+                required
+              />
+            </div>
+            <div>
+              <label for="lead-phone">Mobile number</label>
+              <input
+                id="lead-phone"
+                name="phone"
+                type="tel"
+                placeholder="(555) 555-5555"
+                required
+              />
+            </div>
+          </div>
+
+
+          <div class="field-group">
+            <div>
+              <label for="lead-email">Email</label>
+              <input
+                id="lead-email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+              />
+            </div>
+            <div>
+              <label for="lead-address">Property address</label>
+              <input
+                id="lead-address"
+                name="address"
+                type="text"
+                placeholder="Street, city, ZIP"
+              />
+            </div>
+          </div>
+
+
+          <div class="field-group">
+            <div>
+              <label for="lead-utility">Electric utility</label>
+              <input
+                id="lead-utility"
+                name="utility"
+                type="text"
+                placeholder="e.g. PSEG, FPL, ACE"
+              />
+            </div>
+            <div>
+              <label for="lead-bill">Average monthly bill ($)</label>
+              <input
+                id="lead-bill"
+                name="avg_bill"
+                type="number"
+                min="0"
+                step="1"
+                placeholder="e.g. 180"
+              />
+            </div>
+          </div>
+
+
+          <div>
+            <label for="lead-notes">Anything else I should know?</label>
+            <textarea
+              id="lead-notes"
+              name="notes"
+              placeholder="Roof age, shade/trees, if you’re planning a new roof, battery backup interest, etc."
+            ></textarea>
+          </div>
+
+
+          <button class="btn-primary" type="submit" style="margin-top:0.7rem;">
+            📅 Request my free solar estimate
+          </button>
+          <div class="field-hint" style="margin-top:0.4rem;">
+            By submitting, you agree to be contacted about your solar estimate
+            by phone, text, or email. No spam – just your numbers.
+          </div>
+        </form>
+      </section>
+    </main>
+
+
+    <!-- FAQ / DISCLAIMERS -->
+    <section class="faq">
+      <h3>Common questions</h3>
+
+
+      <div class="faq-item">
+        <div class="faq-question">How accurate is this calculator?</div>
+        <div class="faq-answer">
+          It’s a quick ballpark based on your bill and basic rate assumptions.
+          Your actual proposal will use your real usage history, roof layout,
+          equipment, and local incentives.
+        </div>
+      </div>
+
+
+      <div class="faq-item">
+        <div class="faq-question">Does this lock me into anything?</div>
+        <div class="faq-answer">
+          No. Filling out the form just lets me review your home and send over
+          options. You decide if it makes sense to move forward.
+        </div>
+      </div>
+
+
+      <div class="faq-item">
+        <div class="faq-question">What if my roof needs work or I want a battery?</div>
+        <div class="faq-answer">
+          We can look at options that include roof work and battery backup
+          (like Tesla Powerwall) in the design so everything is bundled into one
+          simple plan where available.
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+      © <span id="year"></span> Sundial Solar Systems. For informational
+      purposes only and not a binding offer. Program availability varies by
+      location.
+    </footer>
+  </div>
+
+
+  <script>
+    // Dynamic year in footer
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+
+
+    function formatCurrency(value) {
+      if (isNaN(value)) return "-";
+      return "$" + value.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    }
+
+
+    function calculateSavings() {
+      const billInput = document.getElementById("bill").value;
+      const usageInput = document.getElementById("usage").value;
+      const utilityRateInput = document.getElementById("utility-rate").value;
+      const solarRateInput = document.getElementById("solar-rate").value;
+
+
+      const errorDiv = document.getElementById("calc-error");
+      const resultsDiv = document.getElementById("results");
+
+
+      errorDiv.style.display = "none";
+      resultsDiv.style.display = "none";
+      errorDiv.textContent = "";
+
+
+      const bill = parseFloat(billInput);
+      const usage = usageInput ? parseFloat(usageInput) : null;
+      const utilityRate = parseFloat(utilityRateInput);
+      const solarRate = parseFloat(solarRateInput);
+
+
+      if (!bill || bill <= 0 || !utilityRate || !solarRate) {
+        errorDiv.textContent =
+          "Please enter at least your monthly bill and valid rate assumptions.";
+        errorDiv.style.display = "block";
+        return;
+      }
+
+
+      let monthlyUsageKwh;
+      if (usage && usage > 0) {
+        monthlyUsageKwh = usage;
+      } else {
+        monthlyUsageKwh = bill / utilityRate;
+      }
+
+
+      const solarMonthlyCost = monthlyUsageKwh * solarRate;
+      const monthlySavings = bill - solarMonthlyCost;
+      const yearOneSavings = monthlySavings * 12;
+      const lifetimeSavings = yearOneSavings * 25; // simple 25-year estimate
+
+
+      document.getElementById("res-usage").textContent =
+        monthlyUsageKwh.toLocaleString(undefined, {
+          maximumFractionDigits: 0,
+        }) + " kWh / month";
+
+
+      document.getElementById("res-solar-bill").textContent =
+        formatCurrency(solarMonthlyCost);
+
+
+      document.getElementById("res-year-savings").textContent =
+        formatCurrency(yearOneSavings);
+
+
+      document.getElementById("res-lifetime-savings").textContent =
+        formatCurrency(lifetimeSavings);
+
+
+      resultsDiv.style.display = "block";
+    }
+  </script>
+</body>
+</html>
