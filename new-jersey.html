@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Jersey Solar Savings | 1One Smart Home Solar PPA </title>
+  <meta name="description" content="See how much New Jersey homeowners can save with solar. Compare NJ utility rates, get an instant solar savings estimate, and request a free custom proposal for your home." />
+
+  <!-- FULL CSS -->
+  <style>
+    :root {
+      --primary: #18a34a;
+      --primary-dark: #15803d;
+      --accent: #0ea5e9;
+      --bg: #0f172a;
+      --card-bg: #111827;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2933;
+      --danger: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 4rem;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .branding-text h1 {
+      font-size: 1.2rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .branding-text p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .hero {
+      padding: 1.25rem 1.5rem;
+      border-radius: 1.25rem;
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+      margin-bottom: 2rem;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero h2 {
+      font-size: 1.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero h2 span {
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+      font-size: 0.96rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+      padding: 0.25rem 0;
+      color: #e5e7eb;
+    }
+
+    .hero-list li span {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-top: 0.05rem;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-left: 2px solid rgba(148, 163, 184, 0.6);
+      padding-left: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      color: #022c22;
+      box-shadow: 0 14px 30px rgba(16, 185, 129, 0.5);
+      text-decoration: none;
+      width: 100%;
+      max-width: 280px;
+      margin: 0.5rem 0;
+    }
+
+    .content-section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      border: 1px solid rgba(148,163,184,0.3);
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .content-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .content-section h3 {
+      margin-top: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .content-section p, .content-section li {
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    .content-section ul {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 2rem 1.25rem;
+      background: radial-gradient(circle at top right, #1f2937, #020617);
+      border-radius: 1.25rem;
+      border: 1px solid rgba(148,163,184,0.3);
+      margin-bottom: 2rem;
+    }
+
+    .cta-section h2 {
+      margin-bottom: 0.7rem;
+      font-size: 1.7rem;
+    }
+
+    .faq {
+      margin-top: 2.4rem;
+      padding: 1.5rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: radial-gradient(circle at top right, #1f2937, #020617);
+    }
+
+    .faq h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 1rem;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-answer {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      text-align: center;
+      position: relative;
+      top: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="branding">
+        <div class="logo-circle">☀️</div>
+        <div class="branding-text">
+          <h1>1One Smart Home Solar PPA </h1>
+          <p>New Jersey Solar • Home Battery • Roof Replacement</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-kicker">New Jersey Solar Programs</div>
+      <h2><span>New Jersey homeowners</span> are paying some of the highest electric rates on the East Coast.</h2>
+      <p class="hero-sub">
+        Many NJ households pay between <strong>24¢–32¢ per kWh</strong> today.  
+        Solar PPAs, leases, and roof + battery bundles can bring that rate down to around <strong>14¢–20¢</strong> with $0 upfront.
+      </p>
+
+      <ul class="hero-list">
+        <li><span>✔</span><div>$0 upfront solar programs statewide</div></li>
+        <li><span>✔</span><div>Great for ACE, PSEG, JCP&amp;L, and O&amp;R customers</div></li>
+        <li><span>✔</span><div>Eligible for Tesla Powerwall 3 backup power</div></li>
+      </ul>
+
+      <p class="hero-note">
+        Start with a quick savings estimate using my online calculator, then request a custom design tailored to your roof and bill.
+      </p>
+
+      <a class="hero-cta" href="/">Use the Free Solar Calculator</a>
+    </section>
+
+    <section class="content-section">
+      <h2>Why New Jersey Is a Strong Solar Market</h2>
+      <p>
+        New Jersey has a long history of supporting residential solar. Between high electric rates and solid production, 
+        many homeowners see meaningful savings and long-term price protection by going solar.
+      </p>
+
+      <h3>Common NJ utilities switching to solar:</h3>
+      <ul>
+        <li>PSEG – large customer base and rising rates</li>
+        <li>Atlantic City Electric (ACE) – high cost per kWh in South Jersey</li>
+        <li>JCP&amp;L – great solar production potential</li>
+        <li>Orange &amp; Rockland – smaller territory, good roofs</li>
+      </ul>
+
+      <h3>Typical NJ cost comparison:</h3>
+      <p>
+        <strong>Utility:</strong> ~24–32¢ per kWh  
+        <br />
+        <strong>Solar:</strong> often ~15–19¢ per kWh depending on usage, roof, and program.
+      </p>
+    </section>
+
+    <section class="cta-section">
+      <h2>Get a Custom Solar Proposal for Your NJ Home</h2>
+      <p>
+        I’ll design your system, check your roof and shading, match your bill, and walk you through a simple side-by-side comparison.
+      </p>
+      <a class="hero-cta" href="/">Request Your Free Proposal</a>
+    </section>
+
+    <section class="faq">
+      <h3>New Jersey Solar FAQ</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">Does solar really work well in New Jersey?</div>
+        <div class="faq-answer">
+          Yes. NJ gets solid sun hours throughout the year and has strong solar adoption. Many neighborhoods already have solar on multiple homes.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I qualify with $0 upfront?</div>
+        <div class="faq-answer">
+          Most homeowners do, as long as the roof is in reasonable condition and the home meets basic program requirements.  
+          When you request a proposal, I’ll review your roof and usage to confirm.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What if I need a new roof or want a battery?</div>
+        <div class="faq-answer">
+          We can look at options that include roof work and battery backup (like Tesla Powerwall 3) so you have one simple, bundled solution.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> 1One Smart Home PPA • New Jersey Solar
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
