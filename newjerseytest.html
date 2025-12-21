@@ -923,7 +923,30 @@
     });
     function showEligibilityResult() {
   document.getElementById("eligibility-result").style.display = "block";
+
+      let exitShown = false;
+document.addEventListener("mouseleave", function (e) {
+  if (e.clientY < 0 && !exitShown) {
+    exitShown = true;
+    document.getElementById("exit-capture").style.display = "block";
+  }
+});
+
 }
   </script>
+
+<div id="exit-capture" style="display:none;position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:#020617;border:1px solid rgba(148,163,184,0.4);padding:0.8rem 1rem;border-radius:1rem;max-width:360px;width:92%;box-shadow:0 20px 40px rgba(0,0,0,0.6);z-index:9999;">
+  <div style="font-size:0.85rem;margin-bottom:0.4rem;">
+    Want a copy of your solar savings estimate?
+  </div>
+  <form action="https://formspree.io/f/mkgdbnva" method="POST">
+    <input type="email" name="email" placeholder="Email address" required />
+    <input type="hidden" name="_subject" value="NJ Solar Calculator Exit Capture" />
+    <button type="submit" class="btn-primary" style="margin-top:0.4rem;">
+      Send my results
+    </button>
+  </form>
+</div>
+  
 </body>
 </html>
