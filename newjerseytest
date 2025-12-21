@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NJ Solar Savings Calculator | 0% Increase Solar PPA</title>
+  <meta name="description" content="New Jersey homeowners can compare electric utility costs with a Solar PPA featuring $0 upfront and a 0% annual increase. Use our custom NJ solar savings calculator." />
+
+  <!-- STYLES UNCHANGED -->
+  <style>
+    /* your existing CSS exactly as-is */
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+<header>
+  <div class="branding">
+    <div class="logo-circle">☀️</div>
+    <div class="branding-text">
+      <h1>New Jersey Solar Savings</h1>
+      <p>Solar Power Purchase Agreement Calculator</p>
+    </div>
+  </div>
+  <div class="header-badge">
+    <span></span>
+    <div>Built for NJ homeowners • No signup required</div>
+  </div>
+</header>
+
+<main class="grid">
+
+<!-- HERO OPTIMIZED -->
+<section class="hero">
+  <div class="hero-kicker">New Jersey Homeowners</div>
+
+  <h2>
+    Lock in a <span>lower electric rate</span><br>
+    with a solar PPA
+  </h2>
+
+  <p class="hero-sub">
+    This calculator compares your current New Jersey utility bill to a solar Power Purchase Agreement with
+    <strong>$0 upfront</strong> and a <strong>0% annual increase</strong>.
+  </p>
+
+  <ul class="hero-list">
+    <li><span>✔</span><div>No panel ownership or equipment costs</div></li>
+    <li><span>✔</span><div>You pay only for the solar energy produced</div></li>
+    <li><span>✔</span><div>Designed to beat rising NJ utility rates</div></li>
+  </ul>
+
+  <p class="hero-note">
+    No contact information is required to see your estimate.
+  </p>
+
+  <div class="hero-footer">
+    <button class="hero-cta" onclick="document.getElementById('bill').scrollIntoView({behavior:'smooth'})">
+      Check my solar savings
+    </button>
+    <div class="hero-meta">Results based on NJ utility data</div>
+  </div>
+</section>
+
+<!-- CALCULATOR CARD -->
+<section class="card">
+
+<h3>How this calculator works</h3>
+<p>
+Enter your average electric bill and we estimate your usage. We then compare your current utility rate
+to a solar PPA with a fixed 0% annual increase to show potential savings.
+</p>
+
+<div class="pill-row">
+  <div class="pill">Typical NJ utilities: <strong>24–32¢ / kWh</strong></div>
+  <div class="pill">Solar PPA example: <strong>15–19¢ / kWh</strong></div>
+</div>
+
+<form id="calculator-form" onsubmit="event.preventDefault(); calculateSavings();">
+
+  <!-- FIELDS UNCHANGED -->
+  <!-- keep all your existing calculator inputs -->
+
+  <button class="btn-primary" type="submit">
+    Calculate my NJ solar savings
+  </button>
+
+  <div id="calc-error" class="error" style="display:none;"></div>
+
+  <div id="results" class="results" style="display:none;">
+    <h4>Your solar savings estimate</h4>
+
+    <div class="results-row">
+      <span>Estimated monthly usage</span>
+      <strong id="res-usage">–</strong>
+    </div>
+    <div class="results-row">
+      <span>Estimated solar payment (month 1)</span>
+      <strong id="res-solar-bill">–</strong>
+    </div>
+    <div class="results-row">
+      <span>Estimated first-year savings</span>
+      <strong id="res-year-savings">–</strong>
+    </div>
+    <div class="results-row">
+      <span>Estimated 25-year savings*</span>
+      <strong id="res-lifetime-savings">–</strong>
+    </div>
+
+    <p class="results-note">
+      These are estimates. Final numbers depend on roof layout, sun exposure, and local utility rules.
+    </p>
+
+    <!-- CONVERSION BRIDGE -->
+    <div style="margin-top:1rem;">
+      <h4>Want a personalized breakdown?</h4>
+      <p>
+        A quick 30-minute review confirms your exact solar rate, roof fit, and availability in your area.
+      </p>
+      <a
+        class="btn-primary"
+        href="https://calendar.app.google/pvvMgDLn5BfhRHwg8"
+        target="_blank"
+        rel="noopener"
+      >
+        Schedule free 30-minute review
+      </a>
+    </div>
+  </div>
+</form>
+
+</section>
+</main>
+
+<footer>
+  © <span id="year"></span> New Jersey Solar Savings
+</footer>
+
+</div>
+
+<!-- YOUR EXISTING JS UNCHANGED -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  /* calculator JS stays exactly as you provided */
+</script>
+
+</body>
+</html>
