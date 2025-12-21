@@ -624,7 +624,12 @@
             </p>
           </div>
         </form>
+<div style="margin-top:0.6rem;font-size:0.78rem;color:#9ca3af;">
+  If your estimated solar rate is lower than your utility rate,
+  the next step is confirming your roof fit and final pricing.
+</div>
 
+      
         <hr style="border:none;border-top:1px solid rgba(148,163,184,0.4);margin:1rem 0;" />
 
         <!-- CONTACT FORM -->
@@ -728,7 +733,23 @@
         </form>
       </section>
     </main>
+<section class="content-section">
+  <h2>Why New Jersey homeowners use this calculator</h2>
+  <p>
+    This calculator was built specifically for New Jersey electric rates and solar PPA structures.
+    It’s used by homeowners comparing solar against PSEG, Atlantic City Electric, JCP&L, and O&R.
+  </p>
+  <ul>
+    <li>Based on real NJ utility pricing, not national averages</li>
+    <li>Focused only on solar PPAs with predictable pricing</li>
+    <li>Designed to give a fast, realistic savings snapshot</li>
+  </ul>
+  <p style="font-size:0.8rem;color:#9ca3af;">
+    Final proposals always use your actual usage history and roof design.
+  </p>
+</section>
 
+    
     <section class="content-section">
       <h2>How New Jersey Solar Works for PSEG, ACE, JCP&amp;L and O&amp;R Customers</h2>
       <p>
@@ -863,6 +884,7 @@
 
       document.getElementById("res-lifetime-savings").textContent =
         formatCurrency(lifetimeSavings);
+      document.getElementById("micro-step").style.display = "block";
 
       resultsDiv.style.display = "block";
     }
@@ -899,6 +921,9 @@
           "Network error. Please check your connection or text/call me directly.";
       }
     });
+    function showEligibilityResult() {
+  document.getElementById("eligibility-result").style.display = "block";
+}
   </script>
 </body>
 </html>
