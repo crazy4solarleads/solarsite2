@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shawn Lynch Solar Referrals | Earn Up To $1,000</title>
+  <meta name="description" content="Referred by a friend? New Jersey homeowners can earn up to $1,000 for referrals that go solar. Fill out the form to get started with Shawn Lynch Solar." />
+
+  <style>
+    :root {
+      --primary:#18a34a;
+      --accent:#0ea5e9;
+      --bg:#020617;
+      --card:#0f172a;
+      --text:#f9fafb;
+      --muted:#9ca3af;
+      --border:#1f2937;
+    }
+
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    body {
+      background:radial-gradient(circle at top,#1f2937 0,#020617 60%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .page {
+      max-width:680px;
+      margin:0 auto;
+      padding:2rem 1.25rem 3rem;
+    }
+
+    .card {
+      background:radial-gradient(circle at top,#1f2937,#020617);
+      border:1px solid var(--border);
+      border-radius:1.25rem;
+      padding:1.6rem 1.5rem;
+      box-shadow:0 20px 40px rgba(0,0,0,.6);
+    }
+
+    h1 {
+      font-size:1.9rem;
+      margin-bottom:.6rem;
+    }
+
+    h1 span {
+      color:var(--primary);
+    }
+
+    .sub {
+      color:var(--muted);
+      font-size:.95rem;
+      margin-bottom:1.2rem;
+    }
+
+    .highlight {
+      background:rgba(24,163,74,.15);
+      border:1px solid rgba(24,163,74,.4);
+      padding:.7rem .9rem;
+      border-radius:.9rem;
+      font-size:.9rem;
+      margin-bottom:1.4rem;
+    }
+
+    .highlight strong {
+      color:#ecfdf5;
+    }
+
+    label {
+      display:block;
+      font-size:.8rem;
+      margin-bottom:.25rem;
+      color:#e5e7eb;
+    }
+
+    input, textarea {
+      width:100%;
+      background:#020617;
+      border:1px solid rgba(148,163,184,.4);
+      border-radius:.7rem;
+      padding:.55rem .65rem;
+      color:var(--text);
+      font-size:.85rem;
+      margin-bottom:.75rem;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color:#6b7280;
+    }
+
+    textarea {
+      min-height:70px;
+      resize:vertical;
+    }
+
+    .btn {
+      width:100%;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      border:none;
+      border-radius:.9rem;
+      padding:.7rem 1rem;
+      font-size:.9rem;
+      font-weight:600;
+      color:#022c22;
+      cursor:pointer;
+      margin-top:.4rem;
+    }
+
+    .fine {
+      font-size:.72rem;
+      color:var(--muted);
+      margin-top:.6rem;
+    }
+
+    footer {
+      text-align:center;
+      font-size:.7rem;
+      color:var(--muted);
+      margin-top:1.4rem;
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="card">
+
+    <h1>You were referred to <span>Shawn Lynch Solar</span></h1>
+
+    <p class="sub">
+      Someone you know thought you’d benefit from checking out solar for your home.
+      This page is just to collect your info so we can connect and review options.
+    </p>
+
+    <div class="highlight">
+      <strong>Referral bonus:</strong>  
+      New Jersey homeowners can earn <strong>up to $1,000</strong> for referrals that go solar.
+    </div>
+
+    <form
+      method="POST"
+      action="https://formspree.io/f/mkgdbnva"
+    >
+      <label for="name">Your full name</label>
+      <input id="name" name="name" type="text" placeholder="John Smith" required />
+
+      <label for="phone">Best phone number</label>
+      <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required />
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+      <label for="address">Property address (New Jersey)</label>
+      <input id="address" name="address" type="text" placeholder="Street, City, ZIP" />
+
+      <label for="referrer">Who referred you?</label>
+      <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" required />
+
+      <label for="notes">Anything you'd like us to know?</label>
+      <textarea id="notes" name="notes" placeholder="High bill, roof age, interest in battery, etc."></textarea>
+
+      <input type="hidden" name="_subject" value="Solar Referral Lead - Shawn Lynch Solar" />
+
+      <button type="submit" class="btn">
+        Submit my info
+      </button>
+
+      <p class="fine">
+        No obligation. Your information goes directly to Shawn.  
+        Referral bonuses are paid when a referred homeowner completes a qualifying solar installation.
+      </p>
+    </form>
+
+  </div>
+
+  <footer>
+    © <span id="year"></span> Shawn Lynch Solar • New Jersey
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
