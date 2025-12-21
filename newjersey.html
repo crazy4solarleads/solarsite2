@@ -580,6 +580,27 @@
           <div id="calc-error" class="error" style="display:none;"></div>
 
           <div id="results" class="results" style="display:none;">
+            <div id="micro-step" style="display:none;margin-top:0.9rem;padding:0.8rem;border:1px solid rgba(148,163,184,0.35);border-radius:0.9rem;background:rgba(15,23,42,0.85);">
+  <h4 style="font-size:0.9rem;margin-bottom:0.3rem;">
+    Quick eligibility check
+  </h4>
+  <p style="font-size:0.78rem;color:#9ca3af;margin-bottom:0.5rem;">
+    Based on NJ program rules, most homeowners qualify if they own the home and have usable roof space.
+  </p>
+  <button
+    type="button"
+    class="btn-primary"
+    onclick="showEligibilityResult()"
+  >
+    Check if my home likely qualifies
+  </button>
+
+  <div id="eligibility-result" style="display:none;margin-top:0.6rem;font-size:0.8rem;color:#e5e7eb;">
+    Your home appears likely eligible based on basic NJ criteria.
+    The next step is confirming roof layout, sun exposure, and availability.
+  </div>
+</div>
+
             <h4>Your estimated New Jersey solar snapshot</h4>
             <div class="results-row">
               <span>Estimated monthly usage</span>
@@ -603,7 +624,12 @@
             </p>
           </div>
         </form>
+<div style="margin-top:0.6rem;font-size:0.78rem;color:#9ca3af;">
+  If your estimated solar rate is lower than your utility rate,
+  the next step is confirming your roof fit and final pricing.
+</div>
 
+      
         <hr style="border:none;border-top:1px solid rgba(148,163,184,0.4);margin:1rem 0;" />
 
         <!-- CONTACT FORM -->
@@ -707,7 +733,23 @@
         </form>
       </section>
     </main>
+<section class="content-section">
+  <h2>Why New Jersey homeowners use this calculator</h2>
+  <p>
+    This calculator was built specifically for New Jersey electric rates and solar PPA structures.
+    It’s used by homeowners comparing solar against PSEG, Atlantic City Electric, JCP&L, and O&R.
+  </p>
+  <ul>
+    <li>Based on real NJ utility pricing, not national averages</li>
+    <li>Focused only on solar PPAs with predictable pricing</li>
+    <li>Designed to give a fast, realistic savings snapshot</li>
+  </ul>
+  <p style="font-size:0.8rem;color:#9ca3af;">
+    Final proposals always use your actual usage history and roof design.
+  </p>
+</section>
 
+    
     <section class="content-section">
       <h2>How New Jersey Solar Works for PSEG, ACE, JCP&amp;L and O&amp;R Customers</h2>
       <p>
@@ -842,6 +884,7 @@
 
       document.getElementById("res-lifetime-savings").textContent =
         formatCurrency(lifetimeSavings);
+      document.getElementById("micro-step").style.display = "block";
 
       resultsDiv.style.display = "block";
     }
@@ -878,6 +921,32 @@
           "Network error. Please check your connection or text/call me directly.";
       }
     });
+    function showEligibilityResult() {
+  document.getElementById("eligibility-result").style.display = "block";
+
+      let exitShown = false;
+document.addEventListener("mouseleave", function (e) {
+  if (e.clientY < 0 && !exitShown) {
+    exitShown = true;
+    document.getElementById("exit-capture").style.display = "block";
+  }
+});
+
+}
   </script>
+
+<div id="exit-capture" style="display:none;position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:#020617;border:1px solid rgba(148,163,184,0.4);padding:0.8rem 1rem;border-radius:1rem;max-width:360px;width:92%;box-shadow:0 20px 40px rgba(0,0,0,0.6);z-index:9999;">
+  <div style="font-size:0.85rem;margin-bottom:0.4rem;">
+    Want a copy of your solar savings estimate?
+  </div>
+  <form action="https://formspree.io/f/mkgdbnva" method="POST">
+    <input type="email" name="email" placeholder="Email address" required />
+    <input type="hidden" name="_subject" value="NJ Solar Calculator Exit Capture" />
+    <button type="submit" class="btn-primary" style="margin-top:0.4rem;">
+      Send my results
+    </button>
+  </form>
+</div>
+  
 </body>
 </html>
