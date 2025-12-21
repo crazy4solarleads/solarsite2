@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shawn Lynch Solar Referrals | Earn Up To $1,000</title>
-  <meta name="description" content="Referred by a friend? New Jersey homeowners can earn up to $1,000 for referrals that go solar. Fill out the form to get started with Shawn Lynch Solar." />
+  <title>Shawn Lynch Solar Referrals | Book a Solar Savings Review</title>
+  <meta name="description" content="Referred by a friend? New Jersey homeowners can earn up to $1,000 for referrals that go solar. Schedule a solar savings review with Shawn Lynch Solar." />
 
   <style>
     :root {
@@ -31,7 +31,7 @@
     }
 
     .page {
-      max-width:680px;
+      max-width:900px;
       margin:0 auto;
       padding:2rem 1.25rem 3rem;
     }
@@ -42,6 +42,7 @@
       border-radius:1.25rem;
       padding:1.6rem 1.5rem;
       box-shadow:0 20px 40px rgba(0,0,0,.6);
+      margin-bottom:1.5rem;
     }
 
     h1 {
@@ -66,10 +67,6 @@
       border-radius:.9rem;
       font-size:.9rem;
       margin-bottom:1.4rem;
-    }
-
-    .highlight strong {
-      color:#ecfdf5;
     }
 
     label {
@@ -118,6 +115,13 @@
       margin-top:.6rem;
     }
 
+    .calendar-wrap {
+      border:1px solid rgba(148,163,184,.35);
+      border-radius:1rem;
+      overflow:hidden;
+      margin-top:1rem;
+    }
+
     footer {
       text-align:center;
       font-size:.7rem;
@@ -130,13 +134,13 @@
 <body>
 <div class="page">
 
+  <!-- STEP 1: REFERRAL CONTEXT + INFO -->
   <div class="card">
-
     <h1>You were referred to <span>Shawn Lynch Solar</span></h1>
 
     <p class="sub">
-      Someone you know thought you’d benefit from checking out solar for your home.
-      This page is just to collect your info so we can connect and review options.
+      Someone you know thought you’d benefit from reviewing solar options for your home.
+      This page lets you share your info and pick a time to review a custom solar savings report.
     </p>
 
     <div class="highlight">
@@ -144,10 +148,7 @@
       New Jersey homeowners can earn <strong>up to $1,000</strong> for referrals that go solar.
     </div>
 
-    <form
-      method="POST"
-      action="https://formspree.io/f/mkgdbnva"
-    >
+    <form method="POST" action="https://formspree.io/f/mkgdbnva">
       <label for="name">Your full name</label>
       <input id="name" name="name" type="text" placeholder="John Smith" required />
 
@@ -163,21 +164,42 @@
       <label for="referrer">Who referred you?</label>
       <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" required />
 
-      <label for="notes">Anything you'd like us to know?</label>
+      <label for="notes">Anything you'd like me to know?</label>
       <textarea id="notes" name="notes" placeholder="High bill, roof age, interest in battery, etc."></textarea>
 
-      <input type="hidden" name="_subject" value="Solar Referral Lead - Shawn Lynch Solar" />
+      <input type="hidden" name="_subject" value="Solar Referral + Scheduled Review - Shawn Lynch Solar" />
 
       <button type="submit" class="btn">
-        Submit my info
+        Save my info & continue to scheduling
       </button>
 
       <p class="fine">
-        No obligation. Your information goes directly to Shawn.  
-        Referral bonuses are paid when a referred homeowner completes a qualifying solar installation.
+        No obligation. Referral bonuses are paid after a qualifying solar installation is completed.
       </p>
     </form>
+  </div>
 
+  <!-- STEP 2: CALENDAR SCHEDULING -->
+  <div class="card">
+    <h2 style="font-size:1.4rem;margin-bottom:.5rem;">
+      Schedule your solar savings review
+    </h2>
+    <p class="sub">
+      Choose a time that works best for you. We’ll review your electric usage,
+      solar options, and answer any questions.
+    </p>
+
+    <div class="calendar-wrap">
+      <!-- Google Calendar Appointment Scheduling begin -->
+      <iframe
+        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1SF9H8Yz8YeSfvaZwbCOPhAMtAnVJjBQJbQlSnuvfOuHBOXOIdkVlOIRIBjrvcQ8SAvHZYgCdC?gv=true"
+        style="border:0"
+        width="100%"
+        height="600"
+        frameborder="0">
+      </iframe>
+      <!-- end Google Calendar Appointment Scheduling -->
+    </div>
   </div>
 
   <footer>
