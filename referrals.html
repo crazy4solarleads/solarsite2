@@ -8,125 +8,133 @@
 
   <style>
     :root {
-      --primary:#18a34a;
-      --accent:#0ea5e9;
-      --bg:#020617;
-      --card:#0f172a;
-      --text:#f9fafb;
-      --muted:#9ca3af;
-      --border:#1f2937;
+      --bg: #ffffff;
+      --card: #f9f9f9;
+      --border: #d1d5db;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --primary: #16a34a;
+      --accent: #0284c7;
+      --btnText: #ffffff;
     }
 
     * {
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      background:radial-gradient(circle at top,#1f2937 0,#020617 60%);
-      color:var(--text);
-      line-height:1.6;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     .page {
-      max-width:900px;
-      margin:0 auto;
-      padding:2rem 1.25rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
     }
 
     .card {
-      background:radial-gradient(circle at top,#1f2937,#020617);
-      border:1px solid var(--border);
-      border-radius:1.25rem;
-      padding:1.6rem 1.5rem;
-      box-shadow:0 20px 40px rgba(0,0,0,.6);
-      margin-bottom:1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.6rem 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    h1 {
-      font-size:1.9rem;
-      margin-bottom:.6rem;
+    h1, h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
     }
 
     h1 span {
-      color:var(--primary);
+      color: var(--primary);
     }
 
     .sub {
-      color:var(--muted);
-      font-size:.95rem;
-      margin-bottom:1.2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
     }
 
     .highlight {
-      background:rgba(24,163,74,.15);
-      border:1px solid rgba(24,163,74,.4);
-      padding:.7rem .9rem;
-      border-radius:.9rem;
-      font-size:.9rem;
-      margin-bottom:1.4rem;
+      background: #e6f4ea;
+      border: 1px solid #a7d7b7;
+      padding: 0.8rem 1rem;
+      border-radius: 0.8rem;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      color: var(--text);
     }
 
     label {
-      display:block;
-      font-size:.8rem;
-      margin-bottom:.25rem;
-      color:#e5e7eb;
+      display: block;
+      font-size: 0.82rem;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+      margin-top: 0.6rem;
     }
 
     input, textarea {
-      width:100%;
-      background:#020617;
-      border:1px solid rgba(148,163,184,.4);
-      border-radius:.7rem;
-      padding:.55rem .65rem;
-      color:var(--text);
-      font-size:.85rem;
-      margin-bottom:.75rem;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 0.7rem;
+      padding: 0.7rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
     }
 
     input::placeholder, textarea::placeholder {
-      color:#6b7280;
+      color: var(--muted);
     }
 
     textarea {
-      min-height:70px;
-      resize:vertical;
+      min-height: 80px;
+      resize: vertical;
     }
 
     .btn {
-      width:100%;
-      background:linear-gradient(135deg,var(--primary),var(--accent));
-      border:none;
-      border-radius:.9rem;
-      padding:.7rem 1rem;
-      font-size:.9rem;
-      font-weight:600;
-      color:#022c22;
-      cursor:pointer;
-      margin-top:.4rem;
+      width: 100%;
+      background: var(--primary);
+      border: none;
+      border-radius: 0.9rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--btnText);
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent);
     }
 
     .fine {
-      font-size:.72rem;
-      color:var(--muted);
-      margin-top:.6rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
     }
 
     .calendar-wrap {
-      border:1px solid rgba(148,163,184,.35);
-      border-radius:1rem;
-      overflow:hidden;
-      margin-top:1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      overflow: hidden;
+      margin-top: 1rem;
     }
 
     footer {
-      text-align:center;
-      font-size:.7rem;
-      color:var(--muted);
-      margin-top:1.4rem;
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 1.4rem;
     }
   </style>
 </head>
@@ -134,18 +142,17 @@
 <body>
 <div class="page">
 
-  <!-- STEP 1: REFERRAL CONTEXT + INFO -->
+  <!-- STEP 1: REFERRAL FORM -->
   <div class="card">
     <h1>You were referred to <span>Shawn Lynch Solar</span></h1>
 
     <p class="sub">
-      Someone you know thought you’d benefit from reviewing solar options for your home.
-      This page lets you share your info and pick a time to review a custom solar savings report.
+      Someone you know thought a solar savings review could benefit you.  
+      Fill out your info below so we can schedule a time to walk you through your options.
     </p>
 
     <div class="highlight">
-      <strong>Referral bonus:</strong>  
-      New Jersey homeowners can earn <strong>up to $1,000</strong> for referrals that go solar.
+      Referral Bonus: <strong>Earn up to $1,000</strong> when a referral goes solar.
     </div>
 
     <form method="POST" action="https://formspree.io/f/mkgdbnva">
@@ -158,19 +165,19 @@
       <label for="email">Email address</label>
       <input id="email" name="email" type="email" placeholder="you@example.com" required />
 
-      <label for="address">Property address (New Jersey)</label>
+      <label for="address">Property address (NJ)</label>
       <input id="address" name="address" type="text" placeholder="Street, City, ZIP" />
 
       <label for="referrer">Who referred you?</label>
       <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" required />
 
-      <label for="notes">Anything you'd like me to know?</label>
+      <label for="notes">Any notes (optional)</label>
       <textarea id="notes" name="notes" placeholder="High bill, roof age, interest in battery, etc."></textarea>
 
       <input type="hidden" name="_subject" value="Solar Referral + Scheduled Review - Shawn Lynch Solar" />
 
       <button type="submit" class="btn">
-        Save my info & continue to scheduling
+        Save my info & schedule review
       </button>
 
       <p class="fine">
@@ -181,12 +188,9 @@
 
   <!-- STEP 2: CALENDAR SCHEDULING -->
   <div class="card">
-    <h2 style="font-size:1.4rem;margin-bottom:.5rem;">
-      Schedule your solar savings review
-    </h2>
+    <h2>Schedule Your Solar Savings Review</h2>
     <p class="sub">
-      Choose a time that works best for you. We’ll review your electric usage,
-      solar options, and answer any questions.
+      Pick a time that works for you to review your custom savings report and ask any questions.
     </p>
 
     <div class="calendar-wrap">
@@ -211,5 +215,6 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
