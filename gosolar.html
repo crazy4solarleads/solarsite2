@@ -1,1 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NJ Solar PPA Savings Funnel | Lower Electric Bills + New Roof + Tesla Powerwall 3</title>
+
+  <meta name="description" content="New Jersey homeowners: compare rising utility rates vs a Solar PPA. Use the free NJ solar calculator, see a savings graph, read testimonials, and request a free proposal. Options include Tesla Powerwall 3, roof replacement, tree removal, and electrical upgrades." />
+
+  <meta name="keywords" content="
+    NJ solar PPA,
+    New Jersey solar PPA,
+    solar power purchase agreement NJ,
+    NJ solar calculator,
+    New Jersey solar savings,
+    PSE&G solar,
+    Atlantic City Electric solar,
+    JCP&L solar,
+    solar panels New Jersey,
+    no upfront solar NJ,
+    solar with roof replacement NJ,
+    new roof and solar NJ,
+    free roof replacement with solar NJ,
+    Tesla Powerwall 3 New Jersey,
+    home battery backup NJ,
+    tree removal for solar NJ,
+    electrical upgrade for solar NJ,
+    ground mount solar New Jersey,
+    solar financing NJ,
+    best solar company NJ,
+    solar quote NJ,
+    solar estimate NJ,
+    solar consultation NJ
+  " />
+
+  <link rel="canonical" href="https://onesmarthome.us/nj-solar-ppa-savings-funnel" />
+
+  <meta property="og:title" content="NJ Solar PPA Savings Funnel | Lower Electric Bills + Battery + Roof Options" />
+  <meta property="og:description" content="Free NJ solar calculator, savings graph, testimonials, and a fast way to request a free proposal + book an appointment." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111b2e;
+      --text:#eaf0ff;
+      --muted:#b9c3dd;
+      --accent:#22c55e;
+      --accent2:#38bdf8;
+      --warn:#f59e0b;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:14px;
+      --max:1080px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(56,189,248,.18), transparent 55%),
+                  radial-gradient(1200px 600px at 80% 10%, rgba(34,197,94,.16), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+
+    a{ color: var(--accent2); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
+
+    header{
+      padding:56px 0 28px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    @media (max-width: 920px){
+      .hero{ grid-template-columns:1fr; }
+    }
+
+    .badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(245,158,11,.16);
+      border:1px solid rgba(245,158,11,.35);
+      color: #ffd59e;
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:.2px;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height:1.12;
+      letter-spacing:-.6px;
+    }
+
+    .sub{
+      color:var(--muted);
+      font-size: 16px;
+      margin: 0 0 18px;
+      max-width: 70ch;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      font-weight:800;
+      cursor:pointer;
+      text-decoration:none !important;
+      transition: transform .08s ease, opacity .12s ease;
+      white-space:nowrap;
+    }
+    .btn:active{ transform: translateY(1px); opacity:.95; }
+
+    .btnPrimary{
+      background: linear-gradient(90deg, rgba(34,197,94,.95), rgba(34,197,94,.75));
+      color:#04120a;
+      border-color: rgba(34,197,94,.35);
+    }
+
+    .btnGhost{
+      background: rgba(56,189,248,.10);
+      color: var(--text);
+      border-color: rgba(56,189,248,.30);
+    }
+
+    .btnWarn{
+      background: rgba(245,158,11,.18);
+      color: var(--text);
+      border-color: rgba(245,158,11,.35);
+    }
+
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:14px;
+    }
+    @media (max-width: 680px){
+      .kpis{ grid-template-columns:1fr; }
+    }
+    .kpi{
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      border-radius: 12px;
+      padding:12px;
+    }
+    .kpi strong{ display:block; font-size:16px; }
+    .kpi span{ color:var(--muted); font-size:13px; }
+
+    section{
+      padding:34px 0;
+      border-bottom:1px solid var(--border);
+    }
+
+    .sectionTitle{
+      font-size: 26px;
+      margin:0 0 10px;
+      letter-spacing:-.4px;
+    }
+
+    .sectionLead{
+      margin:0 0 16px;
+      color:var(--muted);
+      max-width: 85ch;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 920px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    ul{ margin:10px 0 0 18px; }
+    li{ margin: 7px 0; }
+
+    .pillRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+    .pill{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      padding:8px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* --- Savings graph (pure HTML/CSS, no external libs) --- */
+    .chartWrap{ padding:16px; }
+    .chartHeader{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .chartHeader small{ color: var(--muted); }
+    .bars{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:10px;
+      align-items:end;
+      height: 240px;
+      padding: 14px;
+      border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.20);
+      position:relative;
+      overflow:hidden;
+    }
+    .bars:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), transparent 55%);
+      pointer-events:none;
+    }
+    .bar{
+      position:relative;
+      border-radius: 10px 10px 8px 8px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding: 8px 8px 12px;
+      min-height: 20px;
+    }
+    .bar .fill{
+      position:absolute;
+      left:0; right:0; bottom:0;
+      border-radius: 10px 10px 8px 8px;
+      background: linear-gradient(180deg, rgba(56,189,248,.95), rgba(34,197,94,.85));
+      opacity:.92;
+      height: 40%;
+    }
+    .bar .label{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      font-weight:800;
+      font-size: 13px;
+      color: #071018;
+      background: rgba(255,255,255,.85);
+      border-radius: 999px;
+      padding: 4px 10px;
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    }
+    .barFooter{
+      margin-top:10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Testimonials */
+    .quote{
+      position:relative;
+      padding:16px;
+      border-radius: 14px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.18);
+    }
+    .quote:before{
+      content:"“";
+      position:absolute;
+      top:-14px;
+      left:10px;
+      font-size:54px;
+      color: rgba(56,189,248,.40);
+      font-weight:900;
+    }
+    .quote p{ margin:0 0 8px; color: var(--text); }
+    .quote cite{ color: var(--muted); font-style: normal; font-weight: 700; }
+
+    /* Form */
+    form{
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+    label{ font-weight:800; font-size: 13px; color: var(--muted); }
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+    .formRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    @media (max-width: 680px){
+      .formRow{ grid-template-columns: 1fr; }
+    }
+    .note{
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    /* Footer */
+    footer .container{ padding: 26px 18px 44px; }
+    .footerLinks{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      margin-top:10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footerBrand{
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top:16px;
+    }
+  </style>
+
+  <!-- Optional: Basic structured data to help SEO (Organization + WebPage) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"NJ Solar PPA Savings Funnel",
+    "description":"New Jersey homeowners can use a solar PPA to reduce electricity costs, explore Tesla Powerwall 3, roof replacement, and tree removal options, and request a free solar proposal.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"1One Smart Home Solar Marketing Suite"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- =========================
+       SECTION 1: HERO + CALCULATOR
+  ========================== -->
+  <header>
+    <div class="container hero">
+      <div class="card">
+        <div class="badge">NJ Homeowners • Rising electric bills • Solar PPA savings</div>
+        <h1>Lock In Lower Energy Costs in New Jersey With a Solar PPA (No Upfront Cost)</h1>
+        <p class="sub">
+          If you’re served by <strong>PSE&amp;G</strong>, <strong>Atlantic City Electric</strong>, or <strong>JCP&amp;L</strong>,
+          you’ve likely noticed your electricity bill going up. A <strong>New Jersey Solar Power Purchase Agreement (PPA)</strong>
+          can help you <strong>reduce your cost per kWh</strong>, protect your home budget from future rate increases, and go solar
+          with <strong>$0 upfront</strong>.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="https://onesmarthome.us/newjersey">Run the Free NJ Solar Calculator</a>
+          <a class="btn btnGhost" href="#request">Get a Free Solar Proposal</a>
+          <a class="btn btnWarn" href="#calendar">Book an Appointment</a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <strong>Lower monthly energy cost</strong>
+            <span>Compare your utility vs solar pricing</span>
+          </div>
+          <div class="kpi">
+            <strong>$0 upfront solar</strong>
+            <span>Pay for power — not panels</span>
+          </div>
+          <div class="kpi">
+            <strong>Options available</strong>
+            <span>Roof, Tesla Powerwall 3, tree removal</span>
+          </div>
+        </div>
+
+        <div class="pillRow" aria-label="SEO keyword pill list">
+          <div class="pill">NJ solar PPA</div>
+          <div class="pill">solar panels New Jersey</div>
+          <div class="pill">PSE&amp;G solar savings</div>
+          <div class="pill">Atlantic City Electric solar</div>
+          <div class="pill">JCP&amp;L solar PPA</div>
+          <div class="pill">Tesla Powerwall 3 NJ</div>
+          <div class="pill">new roof + solar</div>
+          <div class="pill">tree removal for solar</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top:0; color:var(--text);">Start here: Free NJ Solar Savings Calculator</h2>
+        <p class="sectionLead" style="margin-bottom:10px;">
+          Get an instant estimate based on New Jersey pricing assumptions, then request a full proposal.
+        </p>
+
+        <div class="box" style="margin:0 0 14px;">
+          <strong>Best next step:</strong> use the calculator, then submit your info for a free custom proposal.
+        </div>
+
+        <a class="btn btnPrimary" style="width:100%;" href="https://onesmarthome.us/newjersey">
+          Go to the NJ Solar Calculator
+        </a>
+
+        <div style="margin-top:10px; color:var(--muted); font-size:13px;">
+          Also explore: <a href="https://onesmarthome.us/njsolarppa">NJ Solar PPA Info</a> •
+          <a href="https://onesmarthome.us/acelectricnj">Atlantic City Electric Page</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       SECTION 2: EDUCATION + BENEFITS
+  ========================== -->
+  <section id="benefits">
+    <div class="container">
+      <h2 class="sectionTitle">Why a Solar PPA Works for New Jersey Homeowners</h2>
+      <p class="sectionLead">
+        A <strong>Solar Power Purchase Agreement (PPA)</strong> is a popular option for homeowners who want solar savings
+        without buying equipment. Instead of paying a utility rate that can rise over time, you pay a predictable rate for
+        solar energy produced at your home — typically at a lower cost per kilowatt-hour.
+      </p>
+
+      <div class="grid2">
+        <div class="card">
+          <h3 style="margin-top:0; color:var(--text);">Solar PPA benefits (SEO: NJ solar PPA, no upfront solar)</h3>
+          <ul>
+            <li><strong>$0 upfront cost:</strong> no large cash purchase required to start saving.</li>
+            <li><strong>Lower price per kWh:</strong> compare your utility pricing vs solar power pricing.</li>
+            <li><strong>Maintenance included:</strong> monitoring and service are typically handled for you.</li>
+            <li><strong>Predictable budgeting:</strong> reduce exposure to future utility rate increases.</li>
+            <li><strong>Fast path to savings:</strong> many homeowners see savings as soon as the system is live.</li>
+          </ul>
+
+          <div class="ctaRow">
+            <a class="btn btnGhost" href="https://onesmarthome.us/njsolarppa">Read NJ Solar PPA Details</a>
+            <a class="btn btnPrimary" href="https://onesmarthome.us/newjersey">Check Savings Now</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0; color:var(--text);">Add-on options homeowners ask about</h3>
+          <p class="sectionLead" style="margin-bottom:8px;">
+            Many New Jersey homes need more than panels. If your project needs additional work, you can explore:
+          </p>
+          <ul>
+            <li><strong>Tesla Powerwall 3:</strong> battery backup for outages and peak-hour protection.</li>
+            <li><strong>New roof + solar:</strong> roof replacement options when a roof is older or damaged.</li>
+            <li><strong>Tree removal for solar:</strong> improve sunlight exposure for better production.</li>
+            <li><strong>Electrical upgrades:</strong> panel or service upgrades when required.</li>
+            <li><strong>Detached structures:</strong> garages/barns may be eligible depending on site conditions.</li>
+          </ul>
+
+          <div class="box">
+            <strong>Pro tip:</strong> Run your numbers first using the calculator, then we confirm roof/shading/eligibility on your free proposal.
+          </div>
+
+          <a class="btn btnPrimary" style="width:100%;" href="#request">Request Info & Options</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       SECTION 3: SAVINGS GRAPH + HOW IT WORKS
+  ========================== -->
+  <section id="savings">
+    <div class="container">
+      <h2 class="sectionTitle">NJ Savings Graph: Utility Bills vs Solar PPA Over Time</h2>
+      <p class="sectionLead">
+        Below is a simple example of how savings can grow when utility costs rise while your solar PPA pricing remains
+        more predictable. Your results vary based on roof, shading, usage, and eligibility. For the most accurate estimate,
+        use the <a href="https://onesmarthome.us/newjersey">free NJ solar calculator</a> and request a proposal.
+      </p>
+
+      <div class="card chartWrap">
+        <div class="chartHeader">
+          <div>
+            <h3 style="margin:0; color:var(--text);">Example: Annual Savings vs Utility</h3>
+            <small>Illustrative example for education only • Not a contract or guarantee</small>
+          </div>
+          <a class="btn btnPrimary" href="https://onesmarthome.us/newjersey">Calculate Your Savings</a>
+        </div>
+
+        <!-- Bars represent "estimated annual savings" by year -->
+        <div class="bars" role="img" aria-label="Example bar chart showing estimated annual savings growing over 5 years">
+          <div class="bar">
+            <div class="fill" style="height:22%;"></div>
+            <div class="label">Year 1<br>$600</div>
+          </div>
+          <div class="bar">
+            <div class="fill" style="height:32%;"></div>
+            <div class="label">Year 2<br>$900</div>
+          </div>
+          <div class="bar">
+            <div class="fill" style="height:44%;"></div>
+            <div class="label">Year 3<br>$1,250</div>
+          </div>
+          <div class="bar">
+            <div class="fill" style="height:58%;"></div>
+            <div class="label">Year 4<br>$1,650</div>
+          </div>
+          <div class="bar">
+            <div class="fill" style="height:72%;"></div>
+            <div class="label">Year 5<br>$2,100</div>
+          </div>
+        </div>
+
+        <div class="barFooter">
+          <strong>Want real numbers for PSE&amp;G, Atlantic City Electric, or JCP&amp;L?</strong>
+          Run the <a href="https://onesmarthome.us/newjersey">NJ calculator</a> and we’ll build a custom proposal based on your home and usage.
+          You can also view: <a href="https://onesmarthome.us/acelectricnj">Atlantic City Electric solar</a> and
+          <a href="https://onesmarthome.us/njsolarppa">NJ Solar PPA info</a>.
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:14px;">
+        <div class="card">
+          <h3 style="margin-top:0; color:var(--text);">What impacts your solar savings in NJ?</h3>
+          <ul>
+            <li>Annual electricity usage (kWh)</li>
+            <li>Current utility pricing and seasonal changes</li>
+            <li>Roof size, direction, and shading (trees nearby)</li>
+            <li>Eligibility requirements and system sizing rules</li>
+            <li>Battery backup (Tesla Powerwall 3) goals for your home</li>
+          </ul>
+          <a class="btn btnGhost" href="https://onesmarthome.us/newjersey">Use Calculator</a>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0; color:var(--text);">If you need a roof, trees cleared, or a battery…</h3>
+          <p class="sectionLead" style="margin-bottom:8px;">
+            This funnel is built for homeowners who want a complete solution:
+            solar + roof + battery + tree removal. Tell us what you need and we’ll map the best path.
+          </p>
+          <ul>
+            <li><strong>New roof:</strong> options if your roof is older or damaged.</li>
+            <li><strong>Tree removal:</strong> clear shading to maximize solar production.</li>
+            <li><strong>Tesla Powerwall 3:</strong> backup power + resilience.</li>
+            <li><strong>Electrical upgrades:</strong> panel/service upgrades when required.</li>
+          </ul>
+          <a class="btn btnPrimary" href="#request">Request Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       SECTION 4: TESTIMONIALS + SOCIAL PROOF
+  ========================== -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="sectionTitle">Testimonials: NJ Homeowners Switching to Solar (PPA)</h2>
+      <p class="sectionLead">
+        Social proof matters. Here are example testimonials and outcomes homeowners commonly report when switching to a
+        Solar PPA in New Jersey: simpler decision-making, lower energy cost, and less stress about future utility increases.
+      </p>
+
+      <div class="grid2">
+        <div class="quote">
+          <p>
+            “Our PSE&amp;G bill kept climbing. We used the calculator, saw the projected savings, and the Solar PPA made it
+            easy because we didn’t need to buy panels. The process was smooth.”
+          </p>
+          <cite>— Homeowner, Central NJ</cite>
+        </div>
+
+        <div class="quote">
+          <p>
+            “Atlantic City Electric summer bills were brutal. Solar lowered our monthly energy cost and we explored battery backup
+            options for outages.”
+          </p>
+          <cite>— Homeowner, South Jersey</cite>
+        </div>
+
+        <div class="quote">
+          <p>
+            “We needed tree removal for shading and had questions about a new roof. Getting everything mapped out on the proposal
+            made the decision way easier.”
+          </p>
+          <cite>— Homeowner, Burlington County</cite>
+        </div>
+
+        <div class="quote">
+          <p>
+            “I didn’t want to handle maintenance or repairs. With the PPA, it felt like a smarter route to savings without
+            the headache.”
+          </p>
+          <cite>— Homeowner, Monmouth County</cite>
+        </div>
+      </div>
+
+      <div class="box">
+        <strong>Want a custom savings report?</strong>
+        Start with the free calculator: <a href="https://onesmarthome.us/newjersey">onesmarthome.us/newjersey</a>
+        — then request your proposal below.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       SECTION 5: LEAD CAPTURE + APPOINTMENTS (FORM + CALENDAR)
+  ========================== -->
+  <section id="request">
+    <div class="container">
+      <h2 class="sectionTitle">Request More Info: Free NJ Solar Proposal + Roof/Battery Options</h2>
+      <p class="sectionLead">
+        Fill out the form to request a free proposal. If you want the fastest and most accurate estimate, include your address,
+        utility provider (PSE&amp;G / Atlantic City Electric / JCP&amp;L), and your average monthly electric bill or kWh usage.
+      </p>
+
+      <div class="grid2">
+        <div class="card">
+          <h3 style="margin-top:0; color:var(--text);">Free Proposal Request Form</h3>
+
+          <form action="https://formspree.io/f/mkgdbnva" method="POST">
+            <div class="formRow">
+              <div>
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="(609) 555-1234" required />
+              </div>
+            </div>
+
+            <div class="formRow">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@email.com" required />
+              </div>
+              <div>
+                <label for="utility">Utility Provider</label>
+                <select id="utility" name="utility">
+                  <option value="PSE&G">PSE&G</option>
+                  <option value="Atlantic City Electric">Atlantic City Electric</option>
+                  <option value="JCP&L">JCP&L</option>
+                  <option value="Other NJ Utility">Other NJ Utility</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="address">Property Address (for accurate savings)</label>
+              <input id="address" name="address" type="text" placeholder="123 Main St, City, NJ" />
+            </div>
+
+            <div class="formRow">
+              <div>
+                <label for="bill">Avg Monthly Electric Bill (optional)</label>
+                <input id="bill" name="avg_monthly_bill" type="text" placeholder="$180 / month" />
+              </div>
+              <div>
+                <label for="kwh">Annual Usage (kWh) if you know it (optional)</label>
+                <input id="kwh" name="annual_kwh" type="text" placeholder="10,500 kWh/year" />
+              </div>
+            </div>
+
+            <div>
+              <label for="options">What are you interested in?</label>
+              <select id="options" name="interests">
+                <option value="Solar PPA savings">Solar PPA savings</option>
+                <option value="Tesla Powerwall 3">Tesla Powerwall 3</option>
+                <option value="New roof + solar">New roof + solar</option>
+                <option value="Tree removal for solar">Tree removal for solar</option>
+                <option value="Electrical upgrades">Electrical upgrades</option>
+                <option value="Everything (solar + roof + battery + trees)">Everything (solar + roof + battery + trees)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Anything we should know? (roof age, shading, goals)</label>
+              <textarea id="message" name="message" placeholder="Example: roof is 18 years old, lots of tree shading, want backup power."></textarea>
+            </div>
+
+            <button class="btn btnPrimary" type="submit">Send Request</button>
+
+            <div class="note">
+              By submitting, you’re requesting info from <strong>1One Smart Home Solar Marketing Suite</strong>.
+              For instant estimates, use the calculator: <a href="https://onesmarthome.us/newjersey">onesmarthome.us/newjersey</a>.
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0; color:var(--text);">Fastest path: Calculator → Proposal → Appointment</h3>
+          <ol style="margin:10px 0 0 18px;">
+            <li>
+              Run the free estimate:
+              <a href="https://onesmarthome.us/newjersey">NJ solar calculator</a>
+            </li>
+            <li>
+              Read details:
+              <a href="https://onesmarthome.us/njsolarppa">NJ Solar PPA</a>
+              and
+              <a href="https://onesmarthome.us/acelectricnj">Atlantic City Electric solar page</a>
+            </li>
+            <li>Submit the form for a custom proposal (left).</li>
+            <li>Book your appointment below to review eligibility and next steps.</li>
+          </ol>
+
+          <div class="box">
+            <strong>Searching for:</strong> solar panels NJ, NJ solar PPA, Tesla Powerwall 3 New Jersey, new roof solar,
+            tree removal solar, roofing and solar bundle, battery backup NJ — you’re in the right place.
+          </div>
+
+          <a class="btn btnGhost" style="width:100%;" href="https://onesmarthome.us/newjersey">Re-run Calculator</a>
+          <a class="btn btnWarn" style="width:100%;" href="#calendar">Jump to Calendar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendar embed at very bottom -->
+  <section id="calendar" style="border-bottom:none;">
+    <div class="container">
+      <h2 class="sectionTitle">Book Your Free NJ Solar Consultation</h2>
+      <p class="sectionLead">
+        Pick a time that works for you. We can review your savings estimate, eligibility, roof/shading questions,
+        Tesla Powerwall 3 options, and next steps for a Solar PPA in New Jersey.
+      </p>
+
+      <div class="card" style="padding:12px;">
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1SF9H8Yz8YeSfvaZwbCOPhAMtAnVJjBQJbQlSnuvfOuHBOXOIdkVlOIRIBjrvcQ8SAvHZYgCdC?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+        <!-- end Google Calendar Appointment Scheduling -->
+      </div>
+
+      <div class="footerLinks">
+        <span>Backlinks:</span>
+        <a href="https://onesmarthome.us/newjersey">NJ Solar Calculator</a> •
+        <a href="https://onesmarthome.us/njsolarppa">NJ Solar PPA Info</a> •
+        <a href="https://onesmarthome.us/acelectricnj">Atlantic City Electric</a>
+      </div>
+
+      <div class="footerBrand">
+        © 2026 <strong>1One Smart Home Solar Marketing Suite</strong> — New Jersey Solar PPA Education & Lead Capture Funnel
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
 
