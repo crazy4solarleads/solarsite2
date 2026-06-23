@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Community Solar Savings Review</title>
+  <meta name="description" content="Check if community solar is available in your area. No rooftop panels required. See estimated electric bill savings and book a 15-minute review." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .top-bar {
+      background: #0f172a;
+      color: white;
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    header {
+      min-height: 720px;
+      background:
+        linear-gradient(rgba(15, 118, 110, 0.82), rgba(15, 23, 42, 0.88)),
+        url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 80px 20px;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      max-width: 680px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: #1f2937;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .hero-card h3 {
+      color: #0f766e;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .hero-card ul {
+      margin-left: 20px;
+      margin-top: 15px;
+    }
+
+    .hero-card li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #facc15;
+      color: #111827;
+      padding: 15px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      margin: 8px 8px 8px 0;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #fde047;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #0f766e;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: 2.3rem;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .section-title p {
+      max-width: 720px;
+      margin: auto;
+      color: #475569;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 26px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .card img {
+      height: 190px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: #0f766e;
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .highlight {
+      background: #ecfdf5;
+    }
+
+    .calculator,
+    .lead-form,
+    .calendar-box {
+      background: white;
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    label {
+      font-weight: 700;
+      color: #334155;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      margin-bottom: 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    button {
+      background: #0f766e;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      border: none;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #115e59;
+    }
+
+    .result {
+      background: #ecfdf5;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 15px;
+      border: 1px solid #bbf7d0;
+      font-weight: 700;
+    }
+
+    .testimonial {
+      position: relative;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+
+    .testimonial strong {
+      color: #0f766e;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 10px;
+    }
+
+    .cta-strip {
+      background:
+        linear-gradient(rgba(15, 118, 110, 0.9), rgba(15, 118, 110, 0.9)),
+        url("https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .faq-item {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .faq-item h3 {
+      color: #0f766e;
+      margin-bottom: 8px;
+    }
+
+    iframe {
+      border-radius: 14px;
+      background: white;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 34px 20px;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+      color: #d1d5db;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        min-height: auto;
+      }
+
+      .hero-content,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.35rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Community Solar Review — Check availability by zip code and utility company.
+  </div>
+
+  <header>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Lower Your Electric Bill Without Rooftop Solar Panels</h1>
+        <p>
+          Community solar may help qualified customers save on electricity by connecting their utility account to a local solar program.
+          No roof installation. No panels on your home. Just a quick savings review.
+        </p>
+
+        <a href="#form" class="btn">Check My Savings</a>
+        <a href="#calendar" class="btn secondary">Book 15-Minute Review</a>
+      </div>
+
+      <div class="hero-card">
+        <h3>See If You Qualify</h3>
+        <p>A quick review can confirm your utility, zip code, bill amount, and available programs.</p>
+        <ul>
+          <li>No rooftop panels required</li>
+          <li>Good for many renters and homeowners</li>
+          <li>Availability depends on utility and location</li>
+          <li>Simple 15-minute review with a live rep</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>How Community Solar Works</h2>
+        <p>
+          Instead of installing panels on your roof, eligible customers may receive credits or savings connected to a shared solar project.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80" alt="Solar panels in a field" />
+          <h3>1. Solar Farm Produces Energy</h3>
+          <p>
+            A local or regional solar project produces clean energy and makes program capacity available to eligible utility customers.
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80" alt="Person reviewing electric bill" />
+          <h3>2. Your Utility Account Is Reviewed</h3>
+          <p>
+            Your zip code, utility company, and average electric bill are checked to see what options may be available.
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1554224154-26032fced8bd?auto=format&fit=crop&w=900&q=80" alt="Savings and bill review" />
+          <h3>3. You May Save Monthly</h3>
+          <p>
+            If eligible, the goal is to reduce your electric costs through available community solar savings programs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="container split">
+      <div>
+        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=80" alt="Clean energy solar landscape" />
+      </div>
+
+      <div>
+        <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+          <h2>Quick Solar Savings Calculator</h2>
+          <p>
+            Enter your average monthly electric bill to see a simple estimated savings example.
+          </p>
+        </div>
+
+        <div class="calculator">
+          <label for="bill">Average Monthly Electric Bill</label>
+          <input type="number" id="bill" placeholder="Example: 180" />
+
+          <button onclick="calculateSavings()">Calculate Estimated Savings</button>
+
+          <div id="calculatorResult" class="result" style="display:none;"></div>
+
+          <p class="small-note">
+            This is only a basic estimate. Actual savings depend on your utility, usage, location, program availability, and final eligibility.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="form">
+    <div class="container split">
+      <div>
+        <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+          <h2>Check Availability In Your Area</h2>
+          <p>
+            Fill this out and we’ll use your utility, zip code, and bill amount to see what community solar options may be available.
+          </p>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80" alt="Home exterior with clean energy theme" />
+      </div>
+
+      <form class="lead-form" action="https://formspree.io/f/meebolyq" method="POST">
+        <input type="hidden" name="landing_page" value="Community Solar Landing Page" />
+        <input type="hidden" name="offer_type" value="Community Solar" />
+
+        <label>Name</label>
+        <input type="text" name="name" required />
+
+        <label>Phone</label>
+        <input type="tel" name="phone" required />
+
+        <label>Email</label>
+        <input type="email" name="email" required />
+
+        <label>Zip Code</label>
+        <input type="text" name="zip_code" required />
+
+        <label>Average Monthly Electric Bill</label>
+        <input type="number" name="average_electric_bill" required />
+
+        <label>Utility Company</label>
+        <input type="text" name="utility_company" placeholder="Example: ACE, PSE&G, JCP&L" required />
+
+        <label>Are you a homeowner or renter?</label>
+        <select name="home_status" required>
+          <option value="">Select one</option>
+          <option>Homeowner</option>
+          <option>Renter</option>
+          <option>Condo owner</option>
+          <option>Other</option>
+        </select>
+
+        <label>Where did you hear about us?</label>
+        <select name="lead_source" required>
+          <option value="">Select one</option>
+          <option>Facebook Marketplace</option>
+          <option>Facebook Group</option>
+          <option>Referral</option>
+          <option>Google</option>
+          <option>Instagram</option>
+          <option>TikTok</option>
+          <option>Lowe's</option>
+          <option>Door Knock</option>
+          <option>Other</option>
+        </select>
+
+        <label>What are you interested in?</label>
+        <textarea name="message" rows="4" required placeholder="Example: I want to see if community solar is available for my utility."></textarea>
+
+        <button type="submit">Submit My Savings Request</button>
+
+        <p class="small-note">
+          After submitting, you can also book a 15-minute review below.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Why People Like Community Solar</h2>
+        <p>
+          Community solar is designed for people who want a simpler way to explore electric bill savings.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Residential home" />
+          <h3>No Rooftop Panels</h3>
+          <p>
+            Helpful for people who rent, have shade, have roof concerns, live in certain HOAs, or simply do not want panels installed.
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80" alt="Person looking at paperwork" />
+          <h3>Simple Bill Review</h3>
+          <p>
+            A rep can review your bill range, utility company, and zip code to see what programs may apply.
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Quick call meeting" />
+          <h3>Fast 15-Minute Call</h3>
+          <p>
+            No long presentation needed. Just a quick review to see if community solar makes sense for your account.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Want To Know If Your Utility Has A Program?</h2>
+      <p>
+        Submit the form or book a quick 15-minute review. We’ll check your area and walk you through the next step.
+      </p>
+      <a href="#form" class="btn">Check Availability</a>
+      <a href="#calendar" class="btn secondary">Schedule A Call</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>What Customers Say</h2>
+        <p>
+          Simple, low-pressure reviews help customers understand their options before making a decision.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card testimonial">
+          <p>
+            “I liked that I didn’t need panels on my house. The review was quick and easy.”
+          </p>
+          <strong>— Homeowner Review</strong>
+        </div>
+
+        <div class="card testimonial">
+          <p>
+            “I just wanted to know if there was a way to save on my bill. This made it simple.”
+          </p>
+          <strong>— Utility Customer Review</strong>
+        </div>
+
+        <div class="card testimonial">
+          <p>
+            “The best part was getting an explanation without pressure.”
+          </p>
+          <strong>— Community Solar Review</strong>
+        </div>
+      </div>
+
+      <p class="small-note" style="text-align:center; margin-top:20px;">
+        Replace these with real testimonials once you have permission to use customer reviews.
+      </p>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do I need solar panels on my roof?</h3>
+        <p>No. Community solar does not require rooftop panel installation.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can renters qualify?</h3>
+        <p>In many cases, renters may be able to participate depending on utility, location, account type, and program rules.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does availability depend on my utility?</h3>
+        <p>Yes. Program availability depends heavily on your utility company, zip code, and current solar program capacity.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How long does the review take?</h3>
+        <p>The review is designed to be quick. Most calls can be handled in about 15 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendar">
+    <div class="container">
+      <div class="section-title">
+        <h2>Book A 15-Minute Community Solar Review</h2>
+        <p>
+          Pick a time that works for you and speak with a live rep about your utility, bill, and available options.
+        </p>
+      </div>
+
+      <div class="calendar-box">
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2wRy-TXaWb4MS5-Dtvc6HyW3b8qGPpF3mXbQCxR_qzramEulv-K-Oe5I850qaHFFJsweVFouXo?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+        <!-- end Google Calendar Appointment Scheduling -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Community Solar Savings Review</strong></p>
+    <p>Program availability depends on utility, location, account status, usage, and eligibility.</p>
+    <p>This page provides estimates only and does not guarantee savings or enrollment approval.</p>
+  </footer>
+
+  <script>
+    function calculateSavings() {
+      const bill = parseFloat(document.getElementById("bill").value);
+      const result = document.getElementById("calculatorResult");
+
+      if (!bill || bill <= 0) {
+        result.style.display = "block";
+        result.innerHTML = "Please enter a valid monthly electric bill.";
+        return;
+      }
+
+      const estimatedSolarBill = bill * 0.75;
+      const monthlySavings = bill - estimatedSolarBill;
+      const yearlySavings = monthlySavings * 12;
+      const twentyFiveYearSavings = yearlySavings * 25;
+
+      result.style.display = "block";
+      result.innerHTML = `
+        Current estimated yearly electric cost: $${(bill * 12).toFixed(2)}<br>
+        Estimated solar-adjusted monthly cost: $${estimatedSolarBill.toFixed(2)}<br>
+        Estimated monthly savings: $${monthlySavings.toFixed(2)}<br>
+        Estimated yearly savings: $${yearlySavings.toFixed(2)}<br>
+        Estimated 25-year savings: $${twentyFiveYearSavings.toFixed(2)}
+      `;
+    }
+  </script>
+
+</body>
+</html>
