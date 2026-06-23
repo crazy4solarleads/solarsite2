@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Califique Para Un Techo Gratis Con Solar</title>
+  <meta name="description" content="Dueños de casa con techo de más de 10 años y bill eléctrico sobre $100 al mes pueden calificar para un techo gratis con solar." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .top-bar {
+      background: #0f172a;
+      color: white;
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    header {
+      min-height: 720px;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.80), rgba(15, 118, 110, 0.82)),
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 80px 20px;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.1rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      max-width: 700px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.96);
+      color: #1f2937;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .hero-card h3 {
+      color: #0f766e;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .hero-card ul {
+      margin-left: 20px;
+      margin-top: 15px;
+    }
+
+    .hero-card li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #facc15;
+      color: #111827;
+      padding: 15px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      margin: 8px 8px 8px 0;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #fde047;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #0f766e;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: 2.3rem;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: auto;
+      color: #475569;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 26px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .card img {
+      height: 190px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: #0f766e;
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .highlight {
+      background: #ecfdf5;
+    }
+
+    .lead-form,
+    .calendar-box {
+      background: white;
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    label {
+      font-weight: 700;
+      color: #334155;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      margin-bottom: 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    button {
+      background: #0f766e;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background: #115e59;
+    }
+
+    .cta-strip {
+      background:
+        linear-gradient(rgba(15, 118, 110, 0.9), rgba(15, 23, 42, 0.86)),
+        url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+
+    .testimonial strong {
+      color: #0f766e;
+    }
+
+    .faq-item {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .faq-item h3 {
+      color: #0f766e;
+      margin-bottom: 8px;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 10px;
+    }
+
+    iframe {
+      border-radius: 14px;
+      background: white;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 34px 20px;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+      color: #d1d5db;
+    }
+
+    @media (max-width: 850px) {
+      header { min-height: auto; }
+
+      .hero-content,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.35rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+
+  <body>
+
+  <div class="top-bar">
+    Revisión Gratis de Techo + Solar — Techo de 10+ años y bill eléctrico sobre $100/mes.
+  </div>
+
+  <header>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Califique Para Un Techo Gratis Con Solar</h1>
+        <p>
+          Si su techo tiene más de 10 años y su bill eléctrico es más de $100 al mes,
+          podría calificar para un techo gratis al instalar solar.
+        </p>
+
+        <a href="#form" class="btn">Verificar Calificación</a>
+        <a href="#calendar" class="btn secondary">Reservar Llamada</a>
+      </div>
+
+      <div class="hero-card">
+        <h3>Calificación Básica</h3>
+        <p>Esta oferta es para dueños de casa que califiquen.</p>
+        <ul>
+          <li>Techo de más de 10 años</li>
+          <li>Bill eléctrico sobre $100/mes</li>
+          <li>Debe ser dueño de la casa</li>
+          <li>Techo gratis con proyecto solar calificado</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Cómo Funciona</h2>
+        <p>
+          Revisamos su techo, casa y bill eléctrico para ver si califica.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80">
+          <h3>1. Revisamos Su Techo</h3>
+          <p>Confirmamos la edad y condición del techo.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80">
+          <h3>2. Revisamos Su Casa</h3>
+          <p>Verificamos dueño de casa y detalles del bill.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80">
+          <h3>3. Confirmamos Su Oferta</h3>
+          <p>Si califica, avanzamos al siguiente paso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="form" class="highlight">
+    <div class="container split">
+      <div>
+        <div class="section-title" style="text-align:left;">
+          <h2>Verifique Si Califica</h2>
+          <p>
+            Solo toma 2 minutos.
+          </p>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1000&q=80">
+      </div>
+
+      <form class="lead-form" action="https://formspree.io/f/meebolyq" method="POST">
+        <input type="hidden" name="landing_page" value="Roof Solar Spanish">
+        <input type="hidden" name="language" value="Spanish">
+
+        <label>Nombre</label>
+        <input type="text" name="name" required />
+
+        <label>Teléfono</label>
+        <input type="tel" name="phone" required />
+
+        <label>Email</label>
+        <input type="email" name="email" required />
+
+        <label>Dirección o Zip Code</label>
+        <input type="text" name="property_location" required />
+
+        <label>¿Usted es dueño de la casa?</label>
+        <select name="homeowner_status" required>
+          <option value="">Seleccione</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+
+        <label>Edad del Techo</label>
+        <select name="roof_age" required>
+          <option value="">Seleccione</option>
+          <option>Menos de 10 años</option>
+          <option>10-15 años</option>
+          <option>15-20 años</option>
+          <option>20+ años</option>
+          <option>No sé</option>
+        </select>
+
+        <label>Bill Eléctrico Mensual</label>
+        <input type="number" name="average_electric_bill" required />
+
+        <label>Compañía Eléctrica</label>
+        <input type="text" name="utility_company" required />
+
+        <label>¿Cómo nos encontró?</label>
+        <select name="lead_source" required>
+          <option value="">Seleccione</option>
+          <option>Facebook Marketplace</option>
+          <option>Facebook Group</option>
+          <option>Referral</option>
+          <option>Google</option>
+          <option>Instagram</option>
+          <option>TikTok</option>
+          <option>Lowe's</option>
+          <option>Door Knock</option>
+          <option>Other</option>
+        </select>
+
+        <label>Notas</label>
+        <textarea name="message" rows="4"></textarea>
+
+        <button type="submit">Enviar Solicitud</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="container">
+      <h2>¿Su Techo Tiene Más De 10 Años?</h2>
+      <p>Podría calificar para un techo gratis con solar.</p>
+      <a href="#form" class="btn">Verificar Ahora</a>
+      <a href="#calendar" class="btn secondary">Reservar Llamada</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Preguntas Frecuentes</h2>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿De verdad el techo es gratis?</h3>
+        <p>
+          Sí, propietarios que califican con techo de más de 10 años y bill eléctrico sobre $100 pueden calificar.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Tengo que ser dueño de la casa?</h3>
+        <p>Sí. Esta oferta es solamente para dueños de casa.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Cuánto dura la llamada?</h3>
+        <p>Normalmente unos 15 minutos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendar">
+    <div class="container">
+      <div class="section-title">
+        <h2>Reserve Su Llamada Gratis</h2>
+      </div>
+
+      <div class="calendar-box">
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2wRy-TXaWb4MS5-Dtvc6HyW3b8qGPpF3mXbQCxR_qzramEulv-K-Oe5I850qaHFFJsweVFouXo?gv=true" style="border:0" width="100%" height="600"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Revisión Gratis de Techo + Solar</strong></p>
+    <p>Oferta para propietarios calificados con techo de más de 10 años y bill eléctrico sobre $100/mes.</p>
+  </footer>
+
+</body>
+</html>
